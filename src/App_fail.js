@@ -27,7 +27,7 @@ class background extends Component{
     };
   }
 
-ComponentDidMount(){
+setInterval(function(){
   fetch('https://spreadsheets.google.com/feeds/list/10DgrO4bnuEVeH_pv_2B0DZxL2AwNo2W6zCxP03UtgHI/od6/public/values?alt=json')
   .then(results => {
     return results.json();
@@ -41,7 +41,7 @@ ComponentDidMount(){
     this.setState({items: items});
     console.log("state",this.state.items)
   })
-}
+},2000);
 
 render(){
   return(
